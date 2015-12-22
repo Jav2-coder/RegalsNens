@@ -8,6 +8,12 @@ public class App {
 
 	private static String NOM_FITXER = "/llista_regals.txt";
 
+	/**
+	 * Metode principal que llegeix el fitxer de text i inicialitza
+	 * l'objecte LlistaNens.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		BufferedReader llista = null;

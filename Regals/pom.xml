@@ -38,7 +38,8 @@
 		</plugins>
 		<resources>
 			<resource>
-				<directory>src/main/resources</directory>
+				<directory>${basedir}/target/dependency</directory>
+				<targetPath>/</targetPath>
 			</resource>
 		</resources>
 	</build>
