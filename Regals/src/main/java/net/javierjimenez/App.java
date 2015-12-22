@@ -11,37 +11,39 @@ public class App {
 	public static void main(String[] args) {
 
 		BufferedReader llista = null;
-		
+
 		try {
 
 			String llistaNens;
 			String regalsNoel = null;
 
-			llista = new BufferedReader(new FileReader(App.class.getResource(NOM_FITXER).getFile()));
+			llista = new BufferedReader(new FileReader(App.class.getResource(
+					NOM_FITXER).getFile()));
 
 			while ((llistaNens = llista.readLine()) != null) {
 
-				if(!llistaNens.contains(":")){
+				if (!llistaNens.contains(":")) {
 					regalsNoel = llistaNens;
-				}	
-			}
-			
-			llista.close();
-			
-			llista = new BufferedReader(new FileReader(App.class.getResource(NOM_FITXER).getFile()));
-			
-			LlistaNens LN = new LlistaNens(regalsNoel);
-			
-			int nens = 0;
-			
-			while((llistaNens = llista.readLine()) != null) {
-				
-				if(llistaNens.contains(":")) nens = nens + LN.comprobarLlista(llistaNens);
-				
+				}
 			}
 
-			System.out.println("Total de nens amb regal: " + nens);
-			
+			llista.close();
+
+			llista = new BufferedReader(new FileReader(App.class.getResource(
+					NOM_FITXER).getFile()));
+
+			LlistaNens LN = new LlistaNens(regalsNoel);
+
+			System.out.println("Nens amb regal:");
+			System.out.println();
+
+			while ((llistaNens = llista.readLine()) != null) {
+
+				if (llistaNens.contains(":")) {
+					LN.comprobarLlista(llistaNens);
+				}
+			}
+
 		} catch (IOException e) {
 
 			e.printStackTrace();
@@ -50,7 +52,8 @@ public class App {
 
 			try {
 
-				if (llista != null) llista.close();
+				if (llista != null)
+					llista.close();
 
 			} catch (IOException ex) {
 
