@@ -23,8 +23,7 @@ public class App {
 			String llistaNens;
 			String regalsNoel = null;
 
-			llista = new BufferedReader(new FileReader(App.class.getResource(
-					NOM_FITXER).getFile()));
+			llista = new BufferedReader(new FileReader(App.class.getResource(NOM_FITXER).getFile()));
 
 			while ((llistaNens = llista.readLine()) != null) {
 
