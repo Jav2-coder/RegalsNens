@@ -3,6 +3,7 @@ package net.javierjimenez;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class App {
 
@@ -23,7 +24,8 @@ public class App {
 			String llistaNens;
 			String regalsNoel = null;
 
-			llista = new BufferedReader(new FileReader(App.class.getResource(NOM_FITXER).getFile()));
+			llista = new BufferedReader(
+					new InputStreamReader(App.class.getResource(NOM_FITXER).openStream()));
 
 			while ((llistaNens = llista.readLine()) != null) {
 
