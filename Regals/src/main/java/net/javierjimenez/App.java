@@ -1,7 +1,6 @@
 package net.javierjimenez;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -10,8 +9,8 @@ public class App {
 	private static String NOM_FITXER = "/llista_regals.txt";
 
 	/**
-	 * Metode principal que llegeix el fitxer de text i inicialitza
-	 * l'objecte LlistaNens.
+	 * Metode principal que llegeix el fitxer de text i inicialitza l'objecte
+	 * LlistaNens.
 	 * 
 	 * @param args
 	 */
@@ -24,8 +23,7 @@ public class App {
 			String llistaNens;
 			String regalsNoel = null;
 
-			llista = new BufferedReader(
-					new InputStreamReader(App.class.getResource(NOM_FITXER).openStream()));
+			llista = new BufferedReader(new InputStreamReader(App.class.getResource(NOM_FITXER).openStream()));
 
 			while ((llistaNens = llista.readLine()) != null) {
 
@@ -36,8 +34,7 @@ public class App {
 
 			llista.close();
 
-			llista = new BufferedReader(new FileReader(App.class.getResource(
-					NOM_FITXER).getFile()));
+			llista = new BufferedReader(new InputStreamReader(App.class.getResource(NOM_FITXER).openStream()));
 
 			LlistaNens LN = new LlistaNens(regalsNoel);
 
